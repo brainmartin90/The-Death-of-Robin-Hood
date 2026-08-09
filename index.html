@@ -1326,7 +1326,126 @@
                     0 17px 17px;
             }
         }
+/* =========================
+   HERO MEDIA / TRAILER IMAGE
+========================== */
 
+.hero-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: #000;
+    box-shadow: var(--shadow);
+}
+
+/* Trailer / Movie Image */
+.hero-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+/* Slight zoom on hover */
+.hero-media:hover img {
+    transform: scale(1.03);
+}
+
+/* Dark overlay */
+.hero-media .media-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.60)
+        );
+    z-index: 2;
+}
+
+/* Play Button */
+.hero-media .play-button {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.72);
+    border: 2px solid var(--yellow);
+    color: var(--yellow);
+
+    font-size: 27px;
+    line-height: 1;
+    padding-left: 4px;
+
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Play button hover */
+.hero-media .play-button:hover {
+    background: var(--yellow);
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(245, 197, 24, 0.12);
+}
+
+/* Play button focus */
+.hero-media .play-button:focus-visible {
+    outline: 2px solid var(--yellow-light);
+    outline-offset: 4px;
+}
+
+/* =========================
+   TABLET
+========================== */
+
+@media (max-width: 768px) {
+
+    .hero-media {
+        border-radius: 14px;
+    }
+
+    .hero-media .play-button {
+        width: 68px;
+        height: 68px;
+        font-size: 24px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================== */
+
+@media (max-width: 480px) {
+
+    .hero-media {
+        border-radius: 12px;
+    }
+
+    .hero-media .play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 21px;
+    }
+
+}
     </style>
 </head>
 
@@ -1503,23 +1622,26 @@
 
                 <!-- HERO VIDEO -->
 
-                <div class="hero-media">
+               <div class="hero-media">
 
-                     <img
-        src="https://raw.githubusercontent.com/brainmartin90/The-Death-of-Robin-Hood/main/trailer.jpg"
-        alt="The Death of Robin Hood (2026) movie"
+    <img
+        src="https://raw.githubusercontent.com/brainmartin90/The-Death-of-Robin-Hood/main/trailer-poster.jpg"
+        alt="The Death of Robin Hood (2026)"
     >
 
     <div class="media-overlay">
+
         <a
-            href="https://www.1024tera.com/sharing/link?surl=q3U549WRr25PVFnlTxNQWw"
+            href="#watch-player"
             class="play-button"
-            aria-label="Watch The Death of Robin Hood trailer"
+            aria-label="Watch The Death of Robin Hood (2026)"
         >
             ▶
         </a>
+
     </div>
-                </div>
+
+</div>
 
 
             </div>
@@ -1535,65 +1657,6 @@
 <main>
 
 
-<!-- =========================
-     ABOUT
-========================== -->
-
-<section
-    class="section"
-    id="about">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <h2>
-                The Death of Robin Hood (2026)
-            </h2>
-
-        </div>
-
-
-        <div class="content">
-
-            <p>
-
-                Looking for <strong>The Death of Robin Hood</strong>
-                online? This page brings together the main
-                information viewers usually want before watching,
-                including the story, cast, director, release date,
-                runtime, genre, viewing details, parents guide,
-                review, and FAQs.
-
-            </p>
-
-
-            <p>
-
-                Directed and written by
-                <strong>Michael Sarnoski</strong>, the movie gives
-                the legendary Robin Hood story a darker dramatic
-                direction. The film stars Hugh Jackman as Robin Hood,
-                with Jodie Comer as Sister Brigid and Bill Skarsgård
-                as Little John.
-
-            </p>
-
-
-            <p>
-
-                The Death of Robin Hood is listed as an
-                <strong>Adventure, Drama, and Action</strong> movie
-                with a runtime of approximately
-                <strong>2 hours and 3 minutes</strong>.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 
@@ -1658,6 +1721,65 @@
 
 </section>
 
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section
+    class="section"
+    id="about">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                The Death of Robin Hood (2026)
+            </h2>
+
+        </div>
+
+
+        <div class="content">
+
+            <p>
+
+                Looking for <strong>The Death of Robin Hood</strong>
+                online? This page brings together the main
+                information viewers usually want before watching,
+                including the story, cast, director, release date,
+                runtime, genre, viewing details, parents guide,
+                review, and FAQs.
+
+            </p>
+
+
+            <p>
+
+                Directed and written by
+                <strong>Michael Sarnoski</strong>, the movie gives
+                the legendary Robin Hood story a darker dramatic
+                direction. The film stars Hugh Jackman as Robin Hood,
+                with Jodie Comer as Sister Brigid and Bill Skarsgård
+                as Little John.
+
+            </p>
+
+
+            <p>
+
+                The Death of Robin Hood is listed as an
+                <strong>Adventure, Drama, and Action</strong> movie
+                with a runtime of approximately
+                <strong>2 hours and 3 minutes</strong>.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- =========================
